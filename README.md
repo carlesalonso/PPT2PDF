@@ -95,6 +95,10 @@ Puedes editar en `Convert.ps1`:
 - No está pensado para Linux/macOS.
 - Archivos con macros, enlaces externos o fuentes no disponibles pueden diferir visualmente en el PDF.
 
+## Contribuciones
+
+¡Bienvenidas! Si quieres mejorar el script, corregir errores o agregar funcionalidades, haz un fork y envía un pull request. Asegúrate de probar tus cambios antes de enviarlos.
+
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.

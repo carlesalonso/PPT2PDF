@@ -3,7 +3,10 @@ $inputFolder  = Join-Path $scriptRoot "input"
 $outputFolder = Join-Path $scriptRoot "output"
 
 # Constantes COM para no depender de ensamblados Office en PowerShell.
+# msoFalse (MsoTriState): valor 0 = False. Se usa en Open() para abrir sin
+# ventana, sin solo-lectura y sin añadir la presentacion a la lista reciente.
 $msoFalse    = 0
+# ppSaveAsPDF (PpSaveAsFileType): valor 32 = exportar/guardar como PDF.
 $ppSaveAsPDF = 32
 
 if (-not (Test-Path $outputFolder)) { New-Item -ItemType Directory -Path $outputFolder | Out-Null }
@@ -35,6 +38,8 @@ foreach ($f in $pptFiles) {
         Write-Warning "Error con $($f.Name): $_"
     }
 }
+
+# Liberar recursos COM de PowerPoint.
 
 if ($null -ne $pptApp) {
     $pptApp.Quit()
